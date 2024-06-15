@@ -29,7 +29,9 @@ onValue(shoppingListInDB, snapshot => {
 form.addEventListener('submit', e => {
   e.preventDefault();
   const inputValue = inputField.value;
-  push(shoppingListInDB, inputValue);
+  if (inputValue.trim()) {
+    push(shoppingListInDB, inputValue);
+  }
   inputField.value = '';
 });
 
